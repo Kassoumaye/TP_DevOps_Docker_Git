@@ -55,7 +55,10 @@ img {
     </style>
 </head>
 <body>
-<h1>Charles Thomas DIATTA</h1>
+  <header>
+    <h1>Charles Thomas DIATTA</h1>  
+  </header>
+
 <img src="https://www.forpro-creteil.org/images/gmte93.png" alt="GRETA 93"style="width: 20%; >
     <h1>Formulaire de contact</h1>
     <form action="" method="post">
@@ -76,6 +79,16 @@ img {
 
         <input type="submit" name="sub" value="ENVOYER">
     </form>
+     
+  <main>
+      <img src="{{ url_for('static', filename=image_url) }}" alt="Center Image">
+      <form action="/" method="post" enctype="multipart/form-data">
+          <label for="file">Télécharger une nouvelle image:</label>
+          <input type="file" name="file" id="file">
+          <button type="submit">Upload</button>
+      </form>
+  </main>
+
     <p>Bienvenue chez les DevOpsiens.</p>
 
     <hr>
