@@ -1,8 +1,8 @@
 # Utilisez une image de base avec un serveur web léger
 FROM nginx
 
-RUN yum update 
-RUN yum install -y git
+RUN apt update 
+RUN apt install -y git
 
 # Définir le répertoire de travail
 WORKDIR /usr/share/nginx/html
