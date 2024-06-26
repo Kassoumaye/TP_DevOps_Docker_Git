@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Thomas DIATTA</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+ margin:20px;
+ padding: 20px;
+ background-color: rgba(143, 105, 161, 0.733);
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ margin: 0;
+ font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1em;
+}
+
+h1 {
+  Color:rgb(255, 255, 255);
+  font-size:20px;
+}
+
+form{
+  border: 1px solid var(--myColor);
+  border-radius: 10px;
+  margin-right:10px;
+}
+
+ p {
+  color:var(--myColor);
+}
+
+input, class, value{
+
+  padding:8px;
+  color:blue;
+  border-radius:8px;
+  background-color:var(--myColor);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+    </style>
+</head>
+<body>
+<h1>Charles Thomas DIATTA</h1>
+<img src="https://www.forpro-creteil.org/images/gmte93.png" alt="GRETA 93"style="width: 20%; >
+    <h1>Formulaire de contact</h1>
+    <form action="" method="post">
+        <p>
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" placeholder="Votre nom ici" required>
+        </p>
+
+        <p>
+        <label for="email">Email :</label>
+        <input type="email" name="email" placeholder="Votre email ici" required>
+        </p>
+
+        <p>
+        <label for="MDP">MDP :</label>
+        <input type="password" name="mdp" placeholder="Votre password ici" required>
+        </p>
+
+        <input type="submit" name="sub" value="ENVOYER">
+    </form>
+    <p>Bienvenue chez les DevOpsiens.</p>
+
+    <hr>
+        <footer>
+            <p>&copy; GRETA 93 Noisy-Le-Grand </p>
+        </footer>
+</body>
+</html>
+
+ 

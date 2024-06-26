@@ -1,0 +1,19 @@
+# Utilisez une image de base avec un serveur web léger
+FROM nginx:alpine
+
+# Copiez les fichiers du site web dans le répertoire de nginx
+COPY . /usr/share/nginx/html
+
+# Utilisation de variables d'environnement pour personnaliser le site
+ARG HEADER_TITLE="Mon Site Web"
+ARG FOOTER_NAME="Nom Prénom"
+
+# Remplacement des variables dans index.html
+RUN sed -i 's/{{header_title}}/'"$HEADER_TITLE"'/g' /usr/share/nginx/html/index.html && \
+    sed -i 's/{{footer_name}}/'"$FOOTER_NAME"'/g' /usr/share/nginx/html/index.html
+
+# Expose le port 80 pour accéder au site
+EXPOSE 80
+
+# Démarre nginx
+CMD ["nginx", "-g", "daemon off;"]
