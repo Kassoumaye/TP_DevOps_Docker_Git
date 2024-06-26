@@ -5,7 +5,6 @@ RUN apt update
 RUN apt install -y git
 
 # Définir le répertoire de travail
-WORKDIR /usr/share/nginx/html
 RUN rm -rf  /usr/share/nginx/html
 RUN mkdir  /usr/share/nginx/html
 
