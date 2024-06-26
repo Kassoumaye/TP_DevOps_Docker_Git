@@ -1,12 +1,20 @@
 # Utilisez une image de base avec un serveur web léger
-FROM nginx:alpine
+FROM nginx
 
-# Copiez les fichiers du site web dans le répertoire de nginx
-COPY . /usr/share/nginx/html
+RUN yum update 
+RUN yum install -y git
+
+# Définir le répertoire de travail
+WORKDIR /usr/share/nginx/html
+RUN rm -rf  /usr/share/nginx/html
+RUN mkdir  /usr/share/nginx/html
+
+# Cloner le dépôt Git
+RUN git clone https://github.com/Kassoumaye/TP_DevOps_Docker_Git.git /usr/share/nginx/html
 
 # Utilisation de variables d'environnement pour personnaliser le site
-ARG HEADER_TITLE="Mon Site Web"
-ARG FOOTER_NAME="Nom Prénom"
+ARG HEADER_TITLE="Charles Thomas DIATTA"
+ARG FOOTER_NAME="Bienvenu chez les DevOpsiens"
 
 # Remplacement des variables dans index.html
 RUN sed -i 's/{{header_title}}/'"$HEADER_TITLE"'/g' /usr/share/nginx/html/index.html && \
@@ -15,5 +23,3 @@ RUN sed -i 's/{{header_title}}/'"$HEADER_TITLE"'/g' /usr/share/nginx/html/index.
 # Expose le port 80 pour accéder au site
 EXPOSE 80
 
-# Démarre nginx
-CMD ["nginx", "-g", "daemon off;"]
