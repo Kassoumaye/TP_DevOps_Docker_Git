@@ -4,10 +4,6 @@ FROM nginx
 RUN apt update 
 RUN apt install -y git
 
-# Définir le répertoire de travail
-RUN rm -rf  /usr/share/nginx/html
-RUN mkdir  /usr/share/nginx/html
-
 # Cloner le dépôt Git
 RUN git clone https://github.com/Kassoumaye/TP_DevOps_Docker_Git.git /usr/share/nginx/html
 
